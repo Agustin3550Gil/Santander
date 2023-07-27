@@ -1,20 +1,69 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<section class="u-clearfix u-white u-section-1" id="sec-ec26">
+  <div class="u-list u-list-1">
+    <div class="u-repeater u-repeater-1"></div>
   </div>
-</ion-content>
+  <img class="u-hidden-md u-hidden-sm u-hidden-xs u-image u-image-default u-image-1" src="../../../assets/Images/person.svg" alt="" data-image-width="500" data-image-height="262">
+  <img class="u-hidden-md u-hidden-sm u-hidden-xs u-image u-image-default u-image-2" src="../../../assets/Images/stt.svg" alt="" data-image-width="431" data-image-height="126">
+  <a href="https://nicepage.com/website-builder" class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-black u-border-hover-black u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-hidden-md u-hidden-sm u-hidden-xs u-hover-none u-none u-text-black u-text-hover-black u-btn-1">Conocé todo lo que podes hacer con Santander </a>
+  <div class="boxshadow u-tab-links-align-justify u-tabs u-tabs-1">
+    <ul class="u-border-2 u-border-palette-2-light-1 u-spacing-10 u-tab-list u-unstyled" role="tablist">
+      <li class="u-tab-item" role="presentation">
+        <h5 class="active u-button-style u-tab-link u-text-grey-50 u-tab-link-1" id="link-tab-081f" href="#tab-081f" role="tab" aria-controls="tab-081f" aria-selected="true">Soy cliente</h5>
+      </li>
+      <li class="u-tab-item" role="presentation">
+        <h5 class="u-button-style u-tab-link u-text-grey-50 u-tab-link-2" id="link-tab-4d57" href="#tab-4d57" role="tab" aria-controls="tab-4d57" aria-selected="false">No soy cliente</h5>
+      </li>
+    </ul>
+    <div class="u-tab-content">
+      <div class="u-align-center u-container-style u-grey-5 u-tab-active u-tab-pane u-tab-pane-1" id="tab-081f" role="tabpanel" aria-labelledby="link-tab-081f">
+        <div class="u-container-layout u-container-layout-1">
+          <h4 class="u-custom-font u-text u-text-font u-text-1">!Hola! te damos la bienvenida!</h4>
+          <h4 class="u-text u-text-font u-text-grey-50 u-text-2">Completá tus datos y empezá&nbsp;a operar​​.</h4>
+          <div class="u-form u-form-1">
+            <form (ngSubmit)="onSubmit()" [formGroup]="formulario" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 10px;" source="email" name="form">
+              <div class="u-form-group u-form-name u-label-none">
+                <label for="name-3b9a" class="u-label">Name</label>
+                <input type="text" placeholder="Número de documento" id="name-3b9a" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-1" required="" formControlName="numDocuments">
+              </div>
+              <div class="u-form-email u-form-group u-label-none">
+                <label for="email-3b9a" class="u-label">Email</label>
+                <input type="email" placeholder="Clave Santander" id="email-3b9a" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-2" required="" formControlName="PassSantander">
+              </div>
+              <div class="u-form-group u-form-name u-label-none u-form-group-3">
+                <label for="name-ca41" class="u-label">Nombre</label>
+                <input type="text" placeholder="Usuario" id="name-ca41" name="name-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white u-input-3" required="" formControlName="User">              </div>
+              <div class="u-form-checkbox-group u-form-group u-label-none u-form-group-4">
+                <label class="u-label">Comprobaciones</label>
+                <div class="u-form-checkbox-group-wrapper">
+                  <div class="u-input-row">
+                    <input id="field-af5b" type="checkbox" value="Recordar el número de documento" name="checkbox[]">
+                    <label class="u-label" for="field-af5b">Recordar el número de documento</label>
+                  </div>
+                </div>
+              </div>
+              <div (click)="onSubmit()" class="u-align-center u-form-group u-form-submit">
+                <a  class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-7 u-custom-font u-font-open-sans u-radius-23 u-btn-2">Ingresar<br>
+                </a>
+                <input type="submit" value="submit" class="u-form-control-hidden">
+              </div>
+              <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+              <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+              <input type="hidden" value="" name="recaptchaResponse">
+              <input type="hidden" name="formServices" value="df4eb9bab94a97f70c1c2343b8aa74ff">
+            </form>
+          </div>
+          <h2 class="u-custom-font u-font-open-sans u-text u-text-3"> Si no tenés u olvidaste tu clave y/o usuario</h2>
+          <a href="https://nicepage.one" class="u-border-2 u-border-custom-color-7 u-btn u-btn-round u-button-style u-hover-custom-color-6 u-none u-radius-50 u-btn-3">Crear o recuperar clave y/o usuario</a>
+          <h2 class="u-custom-font u-font-open-sans u-text u-text-4"> Si tenés una clave recién generada</h2>
+          <a href="https://nicepage.one" class="u-border-2 u-border-custom-color-7 u-btn u-btn-round u-button-style u-hover-custom-color-6 u-none u-radius-27 u-btn-4">Crear usuario</a>
+        </div>
+      </div>
+      <div class="u-container-style u-grey-5 u-tab-pane u-tab-pane-2" id="tab-4d57" role="tabpanel" aria-labelledby="link-tab-4d57">
+        <div class="u-container-layout u-container-layout-2">
+          <img class="u-image u-image-default u-image-3" src="../../../assets/Images/sinoo.svg" alt="" data-image-width="456" data-image-height="495">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
