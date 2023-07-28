@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { TokenModule } from '../token/token.module';
 
 @NgModule({
   imports: [
@@ -16,8 +17,10 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     HomePageRoutingModule,
     ReactiveFormsModule, 
     AngularFireModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    TokenModule,
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, ],
+
 })
 export class HomePageModule {}

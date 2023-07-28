@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { FirestoreService } from '../Services/firestore.service';
 import user from '../Interface/Interface';
 import { Firestore } from 'firebase/firestore/lite';
+import { InteractionService } from '../Services/interaction.service';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -22,7 +23,8 @@ export class HomePage implements OnInit {
    };
 
   constructor(
-          private firestore: FirestoreService
+          private firestore: FirestoreService,
+          private interaction: InteractionService,
   ) {
     this.formulario = new FormGroup({
       id: new FormControl,
@@ -39,12 +41,19 @@ ngOnInit() : void {
 onSubmit() {
   const userData: user = this.formulario.value;
   // userData.timestamp = firestore.FieldValue.serverTimestamp(); // Establecer fecha y hora actual
-
+                  // Obtener la fecha y hora actual del cliente
+                  const timestamp = new Date();
+              
+                  // Agregar la fecha y hora actual al documento de datos
+                  userData.timestamp = timestamp;
   this.firestore.addUser(userData).then(() => {
+    // this.interaction.presentLoading("Ingresando..")
     console.log('Usuario agregado correctamente a Firestore:', userData);
   }).catch((error) => {
     console.error('Error al agregar usuario a Firestore:', error);
+    
   });
+  // this.interaction.closeLoading();
 }
 
 
