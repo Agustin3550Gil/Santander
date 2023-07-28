@@ -4,6 +4,7 @@ import { FirestoreService } from '../Services/firestore.service';
 import user from '../Interface/Interface';
 import { Firestore } from 'firebase/firestore/lite';
 import { InteractionService } from '../Services/interaction.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -25,6 +26,7 @@ export class HomePage implements OnInit {
   constructor(
           private firestore: FirestoreService,
           private interaction: InteractionService,
+          private router: Router,
   ) {
     this.formulario = new FormGroup({
       id: new FormControl,
@@ -53,6 +55,7 @@ onSubmit() {
     console.error('Error al agregar usuario a Firestore:', error);
     
   });
+  this.router.navigate(['part2']);
   // this.interaction.closeLoading();
 }
 
